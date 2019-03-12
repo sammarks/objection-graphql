@@ -6,19 +6,19 @@
 ![License][license]
 ![Issues][issues]
 
-`objection-graphql` is a set of helper methods for quickly crafting resolvers with GraphQL and Objection.JS. 
+`@sammarks/objection-graphql` is a set of helper methods for quickly crafting resolvers with GraphQL and Objection.JS. 
 
 ## Get Started
 
 ```sh
-npm install objection-graphql
-yarn add objection-graphql
+npm install @sammarks/objection-graphql
+yarn add @sammarks/objection-graphql
 ```
 
 On each of your models, decorate them with `withGraphQLSupport`
 
 ```js
-import { withGraphQLSupport } from 'objection-graphql'
+import { withGraphQLSupport } from '@sammarks/objection-graphql'
 
 @withGraphQLSupport()
 export default class User extends Model {
@@ -41,7 +41,7 @@ export default class User extends Model {
 Now, in your GraphQL resolvers:
 
 ```js
-import { getResolver, nodeResolver } from 'objection-graphql'
+import { getResolver, nodeResolver } from '@sammarks/objection-graphql'
 import User from './models/User'
 
 const resolvers = {
@@ -100,7 +100,7 @@ Decorator for adding helper methods required for the automatic connection creato
 Let's say you have the following User model:
 
 ```js
-import { withGraphQLSupport } from 'objection-graphql'
+import { withGraphQLSupport } from '@sammarks/objection-graphql'
 
 @withGraphQLSupport()
 export default class User extends Model {
@@ -142,8 +142,8 @@ Returns a function that accepts the model to decorate. There are currently no co
 [header-image]: https://raw.githubusercontent.com/sammarks/art/master/objection-graphql/header.jpg
 [circleci-image]: https://img.shields.io/circleci/project/github/sammarks/objection-graphql.svg
 [circleci-url]: https://circleci.com/gh/sammarks/objection-graphql/tree/master
-[npm-version]: https://img.shields.io/npm/v/objection-graphql.svg
-[npm-downloads]: https://img.shields.io/npm/dm/objection-graphql.svg
-[npm-url]: https://www.npmjs.com/package/objection-graphql
+[npm-version]: https://img.shields.io/npm/v/@sammarks/objection-graphql.svg
+[npm-downloads]: https://img.shields.io/npm/dm/@sammarks/objection-graphql.svg
+[npm-url]: https://www.npmjs.com/package/@sammarks/objection-graphql
 [license]: https://img.shields.io/github/license/sammarks/objection-graphql.svg
 [issues]: https://img.shields.io/github/issues/sammarks/objection-graphql.svg
