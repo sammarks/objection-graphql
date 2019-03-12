@@ -1,6 +1,6 @@
 {
   "name": "objection-graphql",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Helpers for combining Objection models with GraphQL.",
   "main": "index.js",
   "repository": "git@github.com:sammarks/objection-graphql.git",
