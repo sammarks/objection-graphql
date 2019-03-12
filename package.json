@@ -6,6 +6,9 @@
   "repository": "git@github.com:sammarks/objection-graphql.git",
   "author": "Samuel Marks <sam@sammarks.me>",
   "license": "MIT",
+  "scripts": {
+    "release": "standard-version"
+  },
   "peerDependencies": {
     "objection": "^1.0.0"
   },
@@ -14,6 +17,7 @@
     "objection-graphql-relay": "^0.0.4"
   },
   "devDependencies": {
-    "objection": "^1.6.3"
+    "objection": "^1.6.3",
+    "standard-version": "^5.0.1"
   }
 }
