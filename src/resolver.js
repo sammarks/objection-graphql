@@ -1,6 +1,8 @@
 const { idWrapper, connectionWrapper, singleRelationshipWrapper } = require('objection-graphql-relay')
-const Case = require('case')
+const { cursorToOffset } = require('graphql-relay')
 const { MANY_RELATIONSHIPS } = require('./constants')
+const orderedPagedRelationQuery = require('./orderedPagedRelationQuery')
+const Case = require('case')
 
 const getResolver = (Model) => {
   return {
@@ -14,7 +16,19 @@ const getResolverRelationships = (Model) => {
     return Object.keys(Model.relationMappings).reduce((resolver, relationMappingKey) => {
       const relationMapping = Model.relationMappings[relationMappingKey]
       if (MANY_RELATIONSHIPS.includes(relationMapping.relation)) {
-        return { ...resolver, [relationMappingKey]: connectionWrapper(Case.pascal(relationMappingKey)) }
+        return {
+          ...resolver,
+          [relationMappingKey]: (parent, args, ...others) => {
+            const funcName = `paginated${Case.pascal(relationMappingKey)}`
+            if (parent[funcName]) {
+              return parent[funcName](args, ...others)
+            } else {
+              const after = args.after ? cursorToOffset(args.after) : null
+              return orderedPagedRelationQuery(parent.pagedRelationQuery, relationMappingKey, args.first, after, args)
+                .then((result) => connectionWrapper(result))
+            }
+          }
+        }
       } else {
         return { ...resolver, [relationMappingKey]: singleRelationshipWrapper(relationMappingKey) }
       }

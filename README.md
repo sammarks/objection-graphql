@@ -96,39 +96,7 @@ this. It just takes the constructor name of the Model and uses that to determine
 
 ### withGraphQLSupport()
 
-Decorator for adding helper methods required for the automatic connection creator inside `getResolver()`.
-Let's say you have the following User model:
-
-```js
-import { withGraphQLSupport } from '@sammarks/objection-graphql'
-
-@withGraphQLSupport()
-export default class User extends Model {
-  static tableName = 'users'
-  static get relationMappings () {
-    return {
-      posts: {
-        modelClass: Post,
-        relation: Model.HasManyRelation,
-        join: {
-          from: 'users.id',
-          to: 'posts.user_id'
-        }
-      }
-    }
-  }
-}
-```
-
-`withGraphQLSupport()` will create a new method on the model prototype called `paginatedPosts` that
-has the following signature:
-
-`paginatedPosts(int first, string after, object args)`
-
-- `first` - Standard GraphQL Relay `first` argument.
-- `after` - Standard GraphQL Relay `after` argument.
-- `args` - Any additional arguments passed. For ordering results.
-
+Decorator for adding helper methods required for the automatic connection creator inside `getResolver()`. 
 Returns a function that accepts the model to decorate. There are currently no configuration options. 
 
 ## Features
