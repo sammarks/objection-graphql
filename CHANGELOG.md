@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.6](https://github.com/sammarks/objection-graphql/compare/v0.1.5...v0.1.6) (2019-03-19)
+
+
+### Bug Fixes
+
+* Make sure getResolver is passing around the this context properly. ([90b0a9f](https://github.com/sammarks/objection-graphql/commit/90b0a9f))
+
+
+
 ## [0.1.5](https://github.com/sammarks/objection-graphql/compare/v0.1.4...v0.1.5) (2019-03-12)
 
 
