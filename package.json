@@ -17,6 +17,7 @@
     "objection-graphql-relay": "^0.0.4"
   },
   "devDependencies": {
+    "graphql": "^14.1.1",
     "objection": "^1.6.3",
     "standard-version": "^5.0.1"
   }

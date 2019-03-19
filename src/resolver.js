@@ -11,11 +11,16 @@ const getResolver = (Model) => {
   }
 }
 
+const isManyRelationship = (relationship, manyRelationships = MANY_RELATIONSHIPS) => {
+  return manyRelationships.some((manyRelationship) =>
+    manyRelationship.name === relationship.name)
+}
+
 const getResolverRelationships = (Model) => {
   if (Model.relationMappings && Object.keys(Model.relationMappings).length > 0) {
     return Object.keys(Model.relationMappings).reduce((resolver, relationMappingKey) => {
       const relationMapping = Model.relationMappings[relationMappingKey]
-      if (MANY_RELATIONSHIPS.includes(relationMapping.relation)) {
+      if (isManyRelationship(relationMapping.relation)) {
         return {
           ...resolver,
           [relationMappingKey]: (parent, args, ...others) => {
@@ -24,8 +29,10 @@ const getResolverRelationships = (Model) => {
               return parent[funcName](args, ...others)
             } else {
               const after = args.after ? cursorToOffset(args.after) : null
-              return orderedPagedRelationQuery(parent.pagedRelationQuery, relationMappingKey, args.first, after, args)
-                .then((result) => connectionWrapper(result))
+              return orderedPagedRelationQuery(parent, relationMappingKey, args.first, after, args)
+                .then((collectionInfo) => {
+                  return connectionWrapper({ collectionInfo, args })
+                })
             }
           }
         }

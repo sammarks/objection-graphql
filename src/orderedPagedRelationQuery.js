@@ -1,7 +1,7 @@
-const orderedPagedRelationQuery = function (pagedRelationQuery, field, first, after, args, eager = null) {
+const orderedPagedRelationQuery = function (parent, field, first, after, args, eager = null) {
   const { orderBy, orderDirection } = args
   const joinRelation = orderBy.split('.').length > 1 ? orderBy.split('.')[0] : null
-  return pagedRelationQuery(field, first, after, undefined, (builder) => {
+  return parent.pagedRelationQuery.call(parent, field, first, after, undefined, (builder) => {
     if (eager) {
       builder.eager(eager)
     }
