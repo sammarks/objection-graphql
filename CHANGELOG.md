@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.2](https://github.com/sammarks/objection-graphql/compare/v0.3.1...v0.3.2) (2019-04-09)
+
+
+### Bug Fixes
+
+* Make sure ordering by an extra key works. ([941e7ba](https://github.com/sammarks/objection-graphql/commit/941e7ba))
+
+
+
 ## [0.3.1](https://github.com/sammarks/objection-graphql/compare/v0.3.0...v0.3.1) (2019-04-09)
 
 
