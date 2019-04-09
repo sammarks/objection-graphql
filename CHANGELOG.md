@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.3.0](https://github.com/sammarks/objection-graphql/compare/v0.2.0...v0.3.0) (2019-04-09)
+
+
+### Features
+
+* Allow additional builder modifications. ([8f5494f](https://github.com/sammarks/objection-graphql/commit/8f5494f))
+
+
+
 # [0.2.0](https://github.com/sammarks/objection-graphql/compare/v0.1.6...v0.2.0) (2019-04-09)
 
 
