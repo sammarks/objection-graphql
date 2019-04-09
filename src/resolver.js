@@ -25,10 +25,10 @@ const getResolverRelationships = (Model, orderedPagedRelationQuery) => {
           ...resolver,
           [relationMappingKey]: (parent, args, ...others) => {
             const funcName = `paginated${Case.pascal(relationMappingKey)}`
+            const after = args.after ? cursorToOffset(args.after) : null
             if (parent[funcName]) {
-              return parent[funcName](args, ...others)
+              return parent[funcName](args.first, after, args, ...others)
             } else {
-              const after = args.after ? cursorToOffset(args.after) : null
               return orderedPagedRelationQuery(parent, relationMappingKey, args.first, after, args)
                 .then((collectionInfo) => {
                   return connectionWrapper({ collectionInfo, args })
