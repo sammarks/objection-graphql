@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.2.0](https://github.com/sammarks/objection-graphql/compare/v0.1.6...v0.2.0) (2019-04-09)
+
+
+### Features
+
+* Add the ability to override the orderedPagedRelationQuery. ([84fdcfc](https://github.com/sammarks/objection-graphql/commit/84fdcfc))
+
+
+
 ## [0.1.6](https://github.com/sammarks/objection-graphql/compare/v0.1.5...v0.1.6) (2019-03-19)
 
 
