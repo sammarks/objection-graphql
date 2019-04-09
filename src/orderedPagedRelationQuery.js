@@ -5,10 +5,10 @@ const orderedPagedRelationQuery = function (parent, field, first, after, args, e
     if (eager) {
       builder.eager(eager)
     }
-    if (joinRelation) {
+    if (joinRelation && Object.keys(builder._modelClass.relationMappings).includes(joinRelation)) {
       builder.joinRelation(joinRelation)
       builder.orderBy(orderBy, orderDirection)
-    } else {
+    } else if (!joinRelation) {
       builder.orderBy(`${builder._modelClass.tableName}.${orderBy}`, orderDirection)
     }
     if (modify) {
