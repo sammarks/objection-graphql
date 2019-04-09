@@ -10,6 +10,8 @@ const orderedPagedRelationQuery = function (parent, field, first, after, args, e
       builder.orderBy(orderBy, orderDirection)
     } else if (!joinRelation) {
       builder.orderBy(`${builder._modelClass.tableName}.${orderBy}`, orderDirection)
+    } else {
+      builder.orderBy(orderBy, orderDirection)
     }
     if (modify) {
       modify(builder)
