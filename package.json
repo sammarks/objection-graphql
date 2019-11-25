@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "case": "^1.6.1",
-    "objection-graphql-relay": "^0.0.9"
+    "objection-graphql-relay": "^0.0.10"
   },
   "devDependencies": {
     "graphql": "^14.1.1",

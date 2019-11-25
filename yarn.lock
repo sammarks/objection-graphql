@@ -908,10 +908,10 @@ object-assign@^4.0.1:
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
-objection-graphql-relay@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/objection-graphql-relay/-/objection-graphql-relay-0.0.9.tgz#051b036b8522dced62495c5c92b505bd61e0d0fe"
-  integrity sha512-DsaQq7MVyqGqTYOtm06twjfQ+lJ9ZxXEMH9OwT8M7GXc++C7ucUzx5yVo3mYS8Yk9DUiLplU9M576CTCVehNRg==
+objection-graphql-relay@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/objection-graphql-relay/-/objection-graphql-relay-0.0.10.tgz#53325baf20318bbcadc90662cf053c474c64ce72"
+  integrity sha512-TSLoAEQ6QX0RH7RF7zYIX7dgi9WtZxUnHwRrXlVt+Uy0UIQJeo5Fls1lh70sYI+YSm+y8rWxAXlryB4wVll0tQ==
   dependencies:
     graphql-relay "^0.6.0"
     lodash "^4.17.11"
