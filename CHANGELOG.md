@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.4](https://github.com/sammarks/objection-graphql/compare/v0.3.3...v0.3.4) (2019-11-25)
+
+
+### Bug Fixes
+
+* upgrade objection-graphql-relay ([57a57c8](https://github.com/sammarks/objection-graphql/commit/57a57c8))
+
+
+
 ## [0.3.3](https://github.com/sammarks/objection-graphql/compare/v0.3.2...v0.3.3) (2019-04-09)
 
 
